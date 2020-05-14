@@ -1,0 +1,155 @@
+<resources>
+    <string name="app_name">Clinic Time</string>
+    <string name="arapp_name">وقت الزيارة</string>
+    <string-array name="mytimes">
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+    </string-array>
+    <string name="draw_open">Open</string>
+    <string name="draw_close">Close</string>
+    <string name="pickday">اختر يوم الحجز</string>
+    <string name="basictimes">المواعيد الاساسية</string>
+    <string name="fullbooked">مواعيد محجوزة</string>
+    <string name="choosetime">اختر الموعد المناسب</string>
+    <string name="choose">اختيار</string>
+    <string name="insertphone">ادخل رقم الهاتف</string>
+    <string name="age">السن</string>
+    <string name="insertemail">ادخل البريد الالكتروني</string>
+    <string name="email">الايميل </string>
+    <string name="notes">ملاحظات</string>
+    <string name="managment">الادارة</string>
+    <string name="clinic">العيادة</string>
+    <string name="newbook">حجز جديد</string>
+    <string name="editbook">تعديل حجز مسبق</string>
+    <string name="callus">الاتصال هاتفيا بالعيادة</string>
+    <string name="mybooks">حجوزاتي</string>
+    <string name="cancelbook">الغاء حجز مسبق</string>
+
+
+    <string name="caseaddtitle">بيانات القضية </string>
+    <string name="caseNum">رقم القضية  </string>
+    <string name="caseYear"> عام القضية </string>
+    <string name="caseCount">الرقم الآلي </string>
+    <string name="caseCountYear">الدائرة </string>
+    <string name="caseAccuser">المتهم </string>
+    <string name="caseCreater">المدعي </string>
+    <string name="caseSessionDate">تاريخ الجلسة </string>
+    <string name="casePapers">مستندات القضية </string>
+    <string name="caseNotes">ملاحظات القضية </string>
+    <string name="caseModifiedDate"> تسجيل البيانات </string>
+    <string name="Addsessioninfo">  اضف جلسة جديدة </string>
+    <string name="insertcaselay">  اضف </string>
+    <string name="updatecasely">  عدل </string>
+    <string name="deletecaselay">  احذف </string>
+
+
+    <string name="add">اضف</string>
+    <string name="button">Button</string>
+    <string name="title">title</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+
+    <string name="editandrestore">تعديل واستعادة</string>
+    <string name="deleted_cases">Deleted Cases</string>
+    <string name="cw"> الاسبوع الحالي</string>
+    <string name="nw"> الاسبوع المقبل</string>
+    <string name="cm"> الشهر الحالي</string>
+    <string name="nm"> الشهر المقبل</string>
+    <string name="all">جميع الحجوزات</string>
+    <string name="deletedcases">الحجوزات المحذوفة</string>
+    <string name="edit">تعديل</string>
+    <string name="cancel">الغاء</string>
+    <string name="delete">حذف</string>
+    <string name="manage">ادارة</string>
+    <string name="test">اختبر</string>
+    <string name="search">بحث</string>
+    <string name="anw">الاسبوع اللاحق</string>
+    <string name="Reservation">الحجوزات</string>
+    <string name="Phone">الهاتف</string>
+    <string name="dsex">النوع</string>
+    <string name="visitdate">تاريخ الزيارة</string>
+    <string name="status">ح الحجز</string>
+    <string name="patname">اسم المريض</string>
+    <string name="Manageall">ادارة الحجوزات </string>
+    <string name="addnewtimebtn">اضافة موعد </string>
+    <string name="deletetimebtn">حذف موعد</string>
+    <string name="disabletimes">ايقاف موعد</string>
+    <string name="enabletimes">تفعيل موعد</string>
+    <string name="close">❌اغلاق</string>
+    <string name="diabletimenow">✓ ايقاف الموعد  </string>
+    <string name="addtimenow">✓ اضافة الموعد  </string>
+    <string name="enabletimenow">✓ تفعيل الموعد  </string>
+    <string name="picktime">🕙 حدد الموعد</string>
+    <string name="pickoday">🕙 حدد اليوم</string>
+    <string name="stoptimecard">🚫 بطاقة ايقاف موعد </string>
+    <string name="stopdaycard">🚫 بطاقة تعطيل يوم </string>
+    <string name="starttimecard"> بطاقة تفعيل موعد </string>
+    <string name="disableday">  تعطيل يوم </string>
+    <string name="addtimecard"> بطاقة اضافة موعد </string>
+    <string name="enableonceadded">  تفعيل الموعد تلقائيا مع الاضافة  </string>
+    <string name="bookcard">بطاقة حجز الموعد رقم : </string>
+    <string name="DaysOut"> ايام العطلـة</string>
+    <string name="lastavilday">نهاية الفـترة</string>
+    <string name="firstavilday">بداية الـفترة</string>
+    <string name="firstdatecard">بطاقة اضافة بداية الفترة</string>
+    <string name="lastdatecard">بطاقة اضافة نهاية الفترة</string>
+    <string name="setdatecard">بطاقة اضافة بداية و نهاية الفترة</string>
+    <string name="setday">حدد اليوم</string>
+    <string name="confirmset"> ✓  تأكيد الاعدادات </string>
+    <string name="DaysIn">ايام العمل</string>
+    <string name="PickVdate">اختر يوم الزيارة</string>
+    <string name="PickVtime">اختر موعد</string>
+    <string name="BookNo">رقم الحجز</string>
+    <string name="vnumber">رقم الحجز</string>
+    <string name="dvisittime">موعد الزيارة</string>
+    <string name="male">ذكر</string>
+    <string name="female">انثى</string>
+    <string name="undefined">غير محدد</string>
+    <string name="pending">انتظار</string>
+    <string name="confirmed">مؤكدة</string>
+    <string name="visitdone">تمت</string>
+    <string name="missed">فائتة</string>
+    <string name="visitcanceled">الغيت</string>
+    <string name="creator">المنشئ</string>
+    <string name="insertextrade">ادخال تفاصيل اخرى</string>
+    <string name="sex">النوع</string>
+    <string name="time">الوقت</string>
+    <string name="enterpassword">ادخل كلمة المرور</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirmpassword">تأكيد كلمة المرور</string>
+    <string name="entername">ادخل الاسم</string>
+    <string name="createaccount">انشاء حساب</string>
+    <string name="registercard">بطاقة تسجيل حساب</string>
+    <string name="login">دخول</string>
+    <string name="usertrial">استخدام حساب تجريبي</string>
+    <string name="cantremember">لا اتذكرها</string>
+    <string name="verfiymail">تأكيد البريد الالكتروني</string>
+    <string name="register">التسجيل</string>
+    <string name="bookavisita">احجزلي كشف</string>
+    <string name="demo">تجريبي</string>
+    <string name="change">تعديل</string>
+    <string name="suggestedtdatetime">موعد مقترح</string>
+    <string name="sugdate">تاريخ مقترح</string>
+    <string name="timeedit">تعديل موعد</string>
+    <string name="confirmchange">تأكيد التعديل</string>
+    <string name="editdata">تعديل بيانات حجز</string>
+    <string name="Managers">المديرون</string>
+    <string name="demoadmin">تجريبي مدير</string>
+    <string name="Democlint">تجريبي عميل</string>
+    <string name="controlpanel">لوحة التحكم</string>
+    <string name="timepreview">10:33 AM</string>
+    <string name="remainpreview">الوقت المتبقي ⏳</string>
+    <string name="aboutapp">عن التطبيق</string>
+    <string name="signout">تسجيل الخروج</string>
+    <string name="terminateapp">انهاء التطبيق</string>
+
+    <string-array name="sexArr">"انثى","ذكر","حدد النوع"</string-array>
+
+</resources>

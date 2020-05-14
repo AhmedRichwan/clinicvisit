@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="3">
+
+                <EditText
+                    android:id="@+id/searchtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_main"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:hint="ابحث عن اسم او رقم هاتف"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/mywhite"
+                    android:textStyle="italic"
+                    android:visibility="visible" />
+
+                <Switch
+                    android:id="@+id/btnswitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:text="استخدام البحث"
+                    android:textColor="@color/mywhite" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/TTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_btn_main"
+                android:padding="5dp"
+                android:text="@string/Reservation"
+
+                android:textAlignment="center"
+                android:textColor="@color/myYellow"
+                android:textSize="25sp"
+                android:visibility="visible" />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layoutDirection="rtl"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:layoutDirection="rtl"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/allbtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription=" كل الحجوزات"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="كل الحجوزات"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/prndingbtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription="قائمة الانتظار"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="الانتظار"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/allrequests"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription=" جميع الطلبات "
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="كل الطلبات"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/changerequestbtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription="قائمة طلبات التعديل"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="طلبات التعديل"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/cancelrequestsbtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription="قائمة طلبات الالغاء"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="طلبات الالغاء"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/completedbtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription="الحجوزات التامة"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="مكتملة"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/missedbtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription=" الحجوازت الفائتة"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="الفائتة"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/cancelledbtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription=" الحجوازت الملغية"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="الملغية"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/allconfirmed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription=" جميع المؤكدة "
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="كل المؤكدة"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/confirmedthisweek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription="حجوزات مؤكدة هذا الاسبوع"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="مؤكد هذاالاسبوع"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/confirmednextweek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription="حجوزات مؤكدة الاسبوع المقبل"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="مؤكد الاسبوع المقبل"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/confirmedthismonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription="حجوزات مؤكدة هذا الشهر"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="مؤكد هذاالشهر "
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/confirmednextmonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription="حجوزات مؤكدة الشهر المقبل"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="مؤكد الشهر المقبل"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id="@+id/deletedbooks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_blackwhite"
+                        android:clickable="true"
+                        android:contentDescription="حجوزات محذوفة"
+                        android:gravity="center"
+                        android:onClick="listViewControl"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="المحذوفة"
+                        android:textColor="@color/mygreen1"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <ListView
+
+                android:id="@+id/res_LV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:dividerHeight="3dp"
+                android:paddingStart="1dp"
+                android:paddingEnd="1dp">
+
+            </ListView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="81dp"
+        android:layout_height="89dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

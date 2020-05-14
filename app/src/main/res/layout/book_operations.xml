@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_panel_blue"
+    android:orientation="vertical"
+    tools:context=".BookOperations">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/admin_confirmbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient_animation"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="تأكيد الحجز"
+                android:textColor="@color/myYellow"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/admin_undoconfirmbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient_animation"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="الغاء تأكيد"
+                android:textColor="@color/myYellow"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/admin_markasdone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient_animation"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="تأكيد حضور"
+                android:textColor="@color/myYellow"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/admin_delbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient_animation"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="حذف موعد"
+                android:textColor="@color/myYellow"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/admin_acceptcancellationbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient_animation"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="قبول الغاء"
+                android:textColor="@color/myYellow"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/admin_accepttimechangebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient_animation"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="قبول تعديل"
+                android:textColor="@color/myYellow"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_inbut_style"
+    android:orientation="vertical"
+    tools:context=".EditBook">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_l_greenblue"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/editdata"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/mywhite"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:weightSum="3" />
+
+    <LinearLayout
+        android:id="@+id/patform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/patname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="0dp"
+                android:layout_weight="3"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="ادخل اسم المريض"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="الاسم"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/patphone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="0dp"
+                android:layout_weight="3"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="@string/insertphone"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text=" رقم الهاتف"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/patage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="0dp"
+                android:layout_weight="3"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="السن"
+                android:inputType="number"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="@string/age"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center_horizontal">
+
+            <Spinner
+                android:id="@+id/patsex"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="0dp"
+                android:layout_weight="3"
+                android:background="@drawable/backgrount_transparent"
+                android:hint="اختر النوع"
+                android:inputType="number"
+                android:popupBackground="@drawable/backgrount_transparent"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="#D5686363"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="@string/dsex"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/patemail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="0dp"
+                android:layout_weight="3"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="@string/insertemail"
+                android:inputType="textEmailAddress"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="@string/email"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/patnote"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="0dp"
+                android:layout_weight="3"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="@string/notes"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="@string/notes"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirmedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/gradient_animation"
+        android:fontFamily="@font/wendy_one"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/confirmchange"
+        android:textAllCaps="false"
+        android:textColor="@color/mywhite"
+        android:textSize="24sp" />
+</LinearLayout>

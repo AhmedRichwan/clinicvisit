@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:orientation="vertical"
+    tools:context=".SignUp">
+
+    <LinearLayout
+        android:id="@+id/reglayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_l_greenblue"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/registercard"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/mywhite"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/SUdisplayname"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="@string/entername"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="الاسم"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/SUphone"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="@string/insertphone"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text=" رقم الهاتف"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/SUemail"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="@string/insertemail"
+                android:inputType="textEmailAddress"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="@string/email"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/SUpass"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="@string/enterpassword"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_btn_main"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="@string/password"
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/SUcpass"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_inbut_style"
+                android:hint="@string/confirmpassword"
+                android:shadowColor="@color/honeyl"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="@color/Mgray"
+                android:textColorLink="#BA5151"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/backgrount_transparent"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text=""
+                android:textColor="@color/myYellow"
+                android:textColorLink="@color/myYellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/SUregister"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/gradient_animation"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:text="@string/createaccount"
+            android:textColor="@color/myYellow"
+            android:textColorLink="@color/myYellow"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

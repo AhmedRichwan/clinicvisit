@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "562279381378",
+    "firebase_url": "https://visittimefb.firebaseio.com",
+    "project_id": "visittimefb",
+    "storage_bucket": "visittimefb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562279381378:android:21e84d12944837c61df79b",
+        "android_client_info": {
+          "package_name": "com.rashwan.clinicvisit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562279381378-30ts3t6c39du38pfg2gj60dl6bset4bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWhXf-5TxPJnfZiRI8notTEvhpLYt305M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562279381378-30ts3t6c39du38pfg2gj60dl6bset4bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562279381378:android:bf5d695e98bfe8ec1df79b",
+        "android_client_info": {
+          "package_name": "com.rashwan.visittime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562279381378-30ts3t6c39du38pfg2gj60dl6bset4bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWhXf-5TxPJnfZiRI8notTEvhpLYt305M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562279381378-30ts3t6c39du38pfg2gj60dl6bset4bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
