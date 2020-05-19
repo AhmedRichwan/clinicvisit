@@ -37,6 +37,7 @@ class BookVisit : AppCompatActivity() {
         setContentView(R.layout.bookvisit)
         ToolsVisit.get_Cinfo(this, null, null, null, null, null, null, vnumberTV)
         mRef = database.getReference("Booked")
+
         cRef = database.getReference("Config")
         mAuth = FirebaseAuth.getInstance()
         DaysInNumbersArr = ToolsVisit.DaysInNumbers()
@@ -54,53 +55,11 @@ class BookVisit : AppCompatActivity() {
 
         }
 
-/*
-        fullbooked() {
-            mRef?.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    var vacant: MutableList<String> = mutableListOf()
-                    var bookedlist: MutableList<String> = mutableListOf()
-                    vacant.addAll(maintimesarray)
-                    var wantedvisit = "notexist"
-                    for (n in dataSnapshot.children) {
-                        val visita = n.getValue(Booked::class.java)
-                        var pickedvisitdate = visita?.visitdate?.toLong()
-                        if (pickedvisitdate == tools.strToEpoch(pickday.text.toString())) {
-                            wantedvisit = visita?.time.toString()
-                        }
-
-                        if (vacant.contains(wantedvisit)) {
-                            vacant.remove(wantedvisit)
-                            bookedlist.add(wantedvisit)
-
-                        } else {
 
 
-                        }
-
-
-                    }
-                    val adapter =
-                        ArrayAdapter(this@bookvisit, R.layout.spstyle, (R.id.tv), bookedlist)
-                    fullbookedsp.adapter = adapter
-                }
-
-
-                override fun onCancelled(databaseError: DatabaseError) {
-                    ToolsVisit.vtoast(
-                        "حدث خطأ",
-                        3,
-                        this@bookvisit,
-                        layoutInflater)
-                    println("loadPost:onCancelled ${databaseError.toException()}")
-
-                }
-            })
-
-
-        }
-*/
         booknow.setOnClickListener {
+
+
             ToolsVisit.btnanim(it)
             booknow()
         }
@@ -111,11 +70,11 @@ class BookVisit : AppCompatActivity() {
         pickVtime.setOnClickListener {
             ToolsVisit.btnanim(it)
             pickDateValidation(pickday)
-//             AvailableDialoge(tools.strToEpoch(pickday.text.toString()),pickVtime,pickday)
         }
     }
 
     fun booknow() {
+
 //validate the book number first
         if (vnumberTV.text.isEmpty()) {
             ToolsVisit.get_Cinfo(this, null, null, null, null, null, null, vnumberTV)
@@ -163,7 +122,9 @@ class BookVisit : AppCompatActivity() {
                             this@BookVisit,
                             layoutInflater
                         )
+
                         cRef?.child("vnumber")?.setValue(vnumberTV.text.toString().toInt() + 1)
+
                     }
                     .addOnFailureListener {
                         ToolsVisit.vtoast(
@@ -321,4 +282,6 @@ class BookVisit : AppCompatActivity() {
         })
         return result
     }
+
+
 }

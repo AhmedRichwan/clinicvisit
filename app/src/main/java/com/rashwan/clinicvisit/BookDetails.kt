@@ -40,6 +40,8 @@ class BookDetails : AppCompatActivity() {
 
         DaysInNumbersArr = ToolsVisit.DaysInNumbers()
         val id = intent.extras!!.getString("id")
+        var notifystate: Int? = null
+        notifystate = intent.extras!!.getInt("isnotify")
         mRef = database.getReference("Booked")
         mAuth = FirebaseAuth.getInstance()
         mNotelist = ArrayList()
@@ -51,6 +53,9 @@ class BookDetails : AppCompatActivity() {
 
             override fun onDataChange(p0: DataSnapshot) {
                 val mbook = p0.child(id!!).getValue(Booked::class.java)!!
+                if (notifystate == 1) {
+                    mRef?.child(mbook.id!!)?.child("isnotified")?.setValue(1)
+                }
                 dpatname.text = mbook.patname
                 dpatemail.text = mbook.patemail
                 dpatphone.text = mbook.patphone
@@ -168,6 +173,8 @@ class BookDetails : AppCompatActivity() {
                     ?.setValue(BE_view.patsex.selectedItemPosition.toInt())
                 mRef?.child(id!!)?.child("notes")?.setValue(BE_view.patnote.text.toString())
                 mRef?.child(id!!)?.child("ischanged")?.setValue(1)
+                mRef?.child(id!!)?.child("isnotified")?.setValue(0)
+
                     ?.addOnSuccessListener {
                         ToolsVisit.vtoast(
                             " تم التعديل بنجاح",
@@ -183,6 +190,7 @@ class BookDetails : AppCompatActivity() {
         }
         confirmbtn.setOnClickListener {
             mRef?.child(id!!)?.child("isconfirmed")?.setValue(1)
+            mRef?.child(id!!)?.child("isnotified")?.setValue(0)
                 ?.addOnCompleteListener {
                     ToolsVisit.vtoast(
                         " تم تأكيد الموعد ",
@@ -196,6 +204,8 @@ class BookDetails : AppCompatActivity() {
         }
         undoconfirmbtn.setOnClickListener {
             mRef?.child(id!!)?.child("isconfirmed")?.setValue(0)
+            mRef?.child(id!!)?.child("isnotified")?.setValue(0)
+
                 ?.addOnCompleteListener {
                     ToolsVisit.vtoast(
                         " تم الغاء تأكيد الموعد ",
@@ -210,6 +220,8 @@ class BookDetails : AppCompatActivity() {
         }
         markasdone.setOnClickListener {
             mRef?.child(id!!)?.child("isconfirmed")?.setValue(2)
+            mRef?.child(id!!)?.child("isnotified")?.setValue(0)
+
                 ?.addOnCompleteListener {
                     ToolsVisit.vtoast(
                         " تم  تأكيد حضور الموعد ",
@@ -229,6 +241,8 @@ class BookDetails : AppCompatActivity() {
             mRef?.child(id!!)?.child("sugvisitdate")?.setValue(0)
             mRef?.child(id!!)?.child("sugtime")?.setValue("")
             mRef?.child(id!!)?.child("isconfirmed")?.setValue(1)
+            mRef?.child(id!!)?.child("isnotified")?.setValue(0)
+
                 ?.addOnCompleteListener {
                     ToolsVisit.vtoast(
                         " تمت الموافقة على الموعد المقترح ",
@@ -244,6 +258,7 @@ class BookDetails : AppCompatActivity() {
             mRef?.child(id!!)?.child("isconfirmed")?.setValue(4)
             val oldtime = dtime.text.toString() + "X"
             mRef?.child(id!!)?.child("time")?.setValue(oldtime)
+            mRef?.child(id!!)?.child("isnotified")?.setValue(0)
                 ?.addOnCompleteListener {
                     ToolsVisit.vtoast(
                         " تم قبول الغاء الموعد ",
@@ -257,6 +272,8 @@ class BookDetails : AppCompatActivity() {
         req_cancelbtn.setOnClickListener {
             if (req_cancelbtn.text.toString().contains("طلب")) {
                 mRef?.child(id!!)?.child("isconfirmed")?.setValue(6)
+                mRef?.child(id!!)?.child("isnotified")?.setValue(0)
+
                     ?.addOnCompleteListener {
                         ToolsVisit.vtoast(
                             " تم تقديم طلب الغاء الموعد ",
@@ -376,6 +393,7 @@ class BookDetails : AppCompatActivity() {
                                 ?.setValue(Tools.strToEpoch(sugdate.text.toString()))
                             mRef?.child(id!!)?.child("sugtime")?.setValue(sugtime.text)
                             mRef?.child(id!!)?.child("isconfirmed")?.setValue(5)
+                            mRef?.child(id!!)?.child("isnotified")?.setValue(0)
                                 ?.addOnSuccessListener {
                                     ToolsVisit.vtoast(
                                         " تم ارسال طلب تعديل الموعد برجاء انتظار رسالة التأكيد",

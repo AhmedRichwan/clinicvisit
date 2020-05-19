@@ -12,8 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.header_layout.view.*
 
@@ -76,12 +75,117 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         ToolsVisit.isAdmin(null, Mngmntbtn, mybooks)
         ToolsVisit.isAdmin(null, allbooks, null)
         c_phone.autoLinkMask = Linkify.PHONE_NUMBERS
+        mRef = database.getReference("Booked")
+        mRef?.addChildEventListener(object : ChildEventListener {
+            override fun onCancelled(p0: DatabaseError) {}
+            override fun onChildMoved(p0: DataSnapshot, p1: String?) {}
+            override fun onChildChanged(p0: DataSnapshot, p1: String?) {
+                if (p0.child("isnotified").value.toString()
+                        .toInt() == 0 && p0.child("isconfirmed").value.toString().toInt() == 5
+                ) {
+                    ToolsVisit.Notify(
+                        p0.child("id").value!!.toString(),
+                        "تعديل حجز ",
+                        "تم طلب تعديل موعد حجز بحاجة للتأكيد " + p0.child("vnumber").value!!,
+                        this@MainActivity
+                    )
+                    //  mRef?.child(p0.child(("id")).value.toString())?.child("isnotified")?.setValue(1)
+
+                }
+                if (p0.child("isnotified").value.toString()
+                        .toInt() == 0 && p0.child("ischanged").value.toString().toInt() == 1
+                ) {
+                    ToolsVisit.Notify(
+                        p0.child("id").value!!.toString(),
+                        "تعديل بيانات ",
+                        "تم تعديل بيانات حجز " + p0.child("vnumber").value!!,
+                        this@MainActivity
+                    )
+                    //  mRef?.child(p0.child(("id")).value.toString())?.child("isnotified")?.setValue(1)
+
+                }
+                if (p0.child("isnotified").value.toString()
+                        .toInt() == 0 && p0.child("isconfirmed").value.toString().toInt() == 6
+                ) {
+                    ToolsVisit.Notify(
+                        p0.child("id").value!!.toString(),
+                        "الغاء حجز ",
+                        "تم طلب الغاء حجز بحاجة للتأكيد " + p0.child("vnumber").value!!,
+                        this@MainActivity
+                    )
+                    //  mRef?.child(p0.child(("id")).value.toString())?.child("isnotified")?.setValue(1)
+
+                }
+                if (p0.child("isnotified").value.toString()
+                        .toInt() == 0 && p0.child("isconfirmed").value.toString()
+                        .toInt() == 2 && p0.child("user").value.toString() == currentlogged
+                ) {
+                    ToolsVisit.Notify(
+                        p0.child("id").value!!.toString(),
+                        " تسجيل حضور ",
+                        "تم اتمام تسجيل حضور  حجز رقم  " + p0.child("vnumber").value!!,
+                        this@MainActivity
+                    )
+                    //  mRef?.child(p0.child(("id")).value.toString())?.child("isnotified")?.setValue(1)
+
+                }
+                if (p0.child("isnotified").value.toString()
+                        .toInt() == 0 && p0.child("isconfirmed").value.toString()
+                        .toInt() == 1 && p0.child("user").value.toString() == currentlogged
+                ) {
+                    ToolsVisit.Notify(
+                        p0.child("id").value!!.toString(),
+                        " تم تأكيد حجزكم ",
+                        "تم تأكيد حجزكم لدينا رقم  " + p0.child("vnumber").value!! + "في يوم " + Tools.epochToStr(
+                            p0.child("visitdate").value!!.toString().toLong()
+                        ),
+                        this@MainActivity
+                    )
+                    //  mRef?.child(p0.child(("id")).value.toString())?.child("isnotified")?.setValue(1)
+
+                }
+                if (p0.child("isnotified").value.toString()
+                        .toInt() == 0 && p0.child("isconfirmed").value.toString()
+                        .toInt() == 4 && p0.child("user").value.toString() == currentlogged
+                ) {
+                    ToolsVisit.Notify(
+                        p0.child("id").value!!.toString(),
+                        " تم الغاء حجزكم ",
+                        "تم الغاء حجزكم لدينا رقم  " + p0.child("vnumber").value!!,
+                        this@MainActivity
+                    )
+                    // //  mRef?.child(p0.child(("id")).value.toString())?.child("isnotified")?.setValue(1)
+
+                }
+
+
+            }
+
+            override fun onChildAdded(p0: DataSnapshot, p1: String?) {
+                if (p0.child("isnotified").value.toString().toInt() == 0) {
+                    ToolsVisit.Notify(
+                        p0.child("id").value!!.toString(),
+                        "حجز جديد",
+                        "تم تلقي حجز جديد بحاجة للتأكيد " + p0.child("vnumber").value!!,
+                        this@MainActivity
+                    )
+                    //  mRef?.child(p0.child(("id")).value.toString())?.child("isnotified")?.setValue(1)
+
+                }
+            }
+
+            override fun onChildRemoved(p0: DataSnapshot) {
+            }
+
+        })
+
         set_clinic_btn.setOnClickListener {
             ToolsVisit.btnanim(it)
             if (clinic_info_show.isShown) {
                 set_clinic_btn.text = "تم"
                 clinic_info_show.visibility = View.GONE
                 clinic_info_set.visibility = View.VISIBLE
+
             } else {
                 set_clinic_btn.text = "تعديل"
                 clinic_info_show.visibility = View.VISIBLE

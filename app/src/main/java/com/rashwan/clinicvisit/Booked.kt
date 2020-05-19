@@ -10,7 +10,7 @@ class Booked {
     var modifdate: String? = null
     var time: String? = null
     var sugtime: String? = null
-    var isbooked: Int? = null
+    var isnotified: Int? = null
     var isdeleted: Int? = null
     var ischanged: Int? = null
     var isconfirmed: Int? = null
@@ -37,7 +37,7 @@ class Booked {
         modifdate: String,
         time: String,
         sugtime: String,
-        isbooked: Int,
+        isnotified: Int,
         isdeleted: Int,
         ischanged: Int,
         isconfirmed: Int,
@@ -60,7 +60,7 @@ class Booked {
         this.modifdate = modifdate
         this.time = time
         this.sugtime = sugtime
-        this.isbooked = isbooked
+        this.isnotified = isnotified
         this.isdeleted = isdeleted
         this.ischanged = ischanged
         this.isconfirmed = isconfirmed

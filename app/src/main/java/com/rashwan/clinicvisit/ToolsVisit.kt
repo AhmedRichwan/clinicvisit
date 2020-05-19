@@ -1,8 +1,10 @@
 package com.rashwan.clinicvisit
 
-import android.app.Activity
-import android.app.DatePickerDialog
+import android.app.*
 import android.content.Context
+import android.content.Context.NOTIFICATION_SERVICE
+import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.AnimationDrawable
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -19,7 +21,62 @@ import java.util.*
 class ToolsVisit {
 
 
-    companion object Vtools {
+    companion object {
+        fun Notify(bookid: String, name: String, description: String, context: Context) {
+            val id = context.applicationContext.packageName
+            val notificationManager =
+                context.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notifyIntent = Intent(context, BookDetails::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            notifyIntent.putExtra("id", bookid)
+            notifyIntent.putExtra("isnotify", 1)
+            val notifyPendingIntent = PendingIntent.getActivity(
+                context, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT
+            )
+            val channel = NotificationChannel(id, name, importance)
+            channel.description = description
+            channel.enableLights(true)
+            channel.lightColor = Color.GREEN
+            channel.enableVibration(true)
+            notificationManager.createNotificationChannel(channel)
+            val notificationID = 101
+            val notification = Notification.Builder(
+                context,
+                id
+            )
+                .setAutoCancel(true)
+                .setContentTitle(name)
+                .setContentText(description)
+                .setSmallIcon(R.drawable.visit_icon)
+                .setChannelId(id)
+                .setContentIntent(notifyPendingIntent)
+                .build()
+            val admins: MutableList<String> = mutableListOf()
+            val mAuth = FirebaseAuth.getInstance()
+            val currentlogged = mAuth.currentUser?.email.toString()
+            val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+            val mRef = database.getReference("Managers")
+            mRef.addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {}
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    admins.clear()
+                    for (n in dataSnapshot.children) {
+
+                        val mgr = n.getValue(Managers::class.java)!!
+                        if (mgr.isenabled!! == 1) {
+                            admins.add(mgr.mgremail!!)
+                        }
+                        if (currentlogged in admins) notificationManager.notify(
+                            notificationID,
+                            notification
+                        )
+
+                    }
+                }
+            })
+        }
         fun Availables(
             pickedvisitdate: Long,
             context: android.content.Context,
@@ -268,6 +325,34 @@ class ToolsVisit {
             })
             progressbar?.visibility = View.INVISIBLE
             return admins
+        }
+
+        fun isManager(): Boolean {
+
+            val admins: MutableList<String> = mutableListOf()
+            val mAuth = FirebaseAuth.getInstance()
+            val currentlogged = mAuth.currentUser?.email.toString()
+            val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+            val mRef = database.getReference("Managers")
+            var ismanger = false
+            mRef.addListenerForSingleValueEvent(object : ValueEventListener {
+
+                override fun onCancelled(p0: DatabaseError) {
+                }
+
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    admins.clear()
+                    for (n in dataSnapshot.children) {
+
+                        val mgr = n.getValue(Managers::class.java)!!
+                        if (mgr.isenabled!! == 1) {
+                            admins.add(mgr.mgremail!!)
+                        }
+                        if (currentlogged in admins) ismanger = true
+                    }
+                }
+            })
+            return ismanger
         }
 
         fun DaysIn(): MutableList<String> {
