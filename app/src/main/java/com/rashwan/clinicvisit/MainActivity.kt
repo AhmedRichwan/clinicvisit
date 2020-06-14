@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ) {
                     ToolsVisit.Notify(
                         p0.child("id").value!!.toString(),
+                        p0.child("vnumber").value!!.toString().toInt(),
                         "تعديل حجز ",
                         "تم طلب تعديل موعد حجز بحاجة للتأكيد " + p0.child("vnumber").value!!,
                         this@MainActivity
@@ -97,6 +98,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ) {
                     ToolsVisit.Notify(
                         p0.child("id").value!!.toString(),
+                        p0.child("vnumber").value!!.toString().toInt(),
                         "تعديل بيانات ",
                         "تم تعديل بيانات حجز " + p0.child("vnumber").value!!,
                         this@MainActivity
@@ -109,6 +111,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ) {
                     ToolsVisit.Notify(
                         p0.child("id").value!!.toString(),
+                        p0.child("vnumber").value!!.toString().toInt(),
                         "الغاء حجز ",
                         "تم طلب الغاء حجز بحاجة للتأكيد " + p0.child("vnumber").value!!,
                         this@MainActivity
@@ -122,6 +125,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ) {
                     ToolsVisit.Notify(
                         p0.child("id").value!!.toString(),
+                        p0.child("vnumber").value!!.toString().toInt(),
                         " تسجيل حضور ",
                         "تم اتمام تسجيل حضور  حجز رقم  " + p0.child("vnumber").value!!,
                         this@MainActivity
@@ -135,6 +139,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ) {
                     ToolsVisit.Notify(
                         p0.child("id").value!!.toString(),
+                        p0.child("vnumber").value!!.toString().toInt(),
                         " تم تأكيد حجزكم ",
                         "تم تأكيد حجزكم لدينا رقم  " + p0.child("vnumber").value!! + "في يوم " + Tools.epochToStr(
                             p0.child("visitdate").value!!.toString().toLong()
@@ -150,6 +155,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ) {
                     ToolsVisit.Notify(
                         p0.child("id").value!!.toString(),
+                        p0.child("vnumber").value!!.toString().toInt(),
                         " تم الغاء حجزكم ",
                         "تم الغاء حجزكم لدينا رقم  " + p0.child("vnumber").value!!,
                         this@MainActivity
@@ -165,6 +171,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 if (p0.child("isnotified").value.toString().toInt() == 0) {
                     ToolsVisit.Notify(
                         p0.child("id").value!!.toString(),
+                        p0.child("vnumber").value!!.toString().toInt(),
                         "حجز جديد",
                         "تم تلقي حجز جديد بحاجة للتأكيد " + p0.child("vnumber").value!!,
                         this@MainActivity

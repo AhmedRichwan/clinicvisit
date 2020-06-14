@@ -186,6 +186,8 @@ class BookVisit : AppCompatActivity() {
             dpd.datePicker.firstDayOfWeek = Calendar.SUNDAY
 //        dpd.datePicker.minDate = (c.timeInMillis)  //today's date in millisec
             dpd.datePicker.minDate = (FirstDate[0] + "000").toLong()
+            if ((FirstDate[0] + "000").toLong() < c.timeInMillis) dpd.datePicker.minDate =
+                c.timeInMillis
             dpd.datePicker.maxDate = (LastDate[0] + "000").toLong()
 
             dpd.show()

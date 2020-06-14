@@ -246,33 +246,10 @@ class Landing : AppCompatActivity(), TextWatcher {
             ProgressAction.cancel(true)
             var cu = mAuth?.currentUser?.displayName.toString()
             var cmail = mAuth?.currentUser?.email.toString()
-//            if(cu=="Demo"){
-//                cu="عميل تجريبي"
-//                ToolsVisit.vtoast(
-//                    " تم تسجيل الدخول كعميل تجريبي",
-//                    1,
-//                    this@landing,
-//                    layoutInflater
-//                )}else if(cmail=="demoadmin@visittime.com"){
-//                cu="مدير تجريبي"
-//                ToolsVisit.vtoast(
-//                    " تم تسجيل الدخول كمدير تجريبي",
-//                    1,
-//                    this@landing,
-//                    layoutInflater
-//                )}
-//
-//            else{
-//
-//            ToolsVisit.vtoast(
-//                " تم تسجيل الدخول كـ $cu",
-//                1,
-//                this@landing,
-//                layoutInflater
-//            )}
             try {
                 ProgressAction.cancel(true)
                 startActivity(Intent(this, MainActivity::class.java))
+
 //                           view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.scale))
             } catch (e: Exception) {
                 Toast.makeText(this, e.message.toString(), Toast.LENGTH_SHORT).show()

@@ -22,7 +22,13 @@ class ToolsVisit {
 
 
     companion object {
-        fun Notify(bookid: String, name: String, description: String, context: Context) {
+        fun Notify(
+            bookid: String,
+            vnumber: Int,
+            name: String,
+            description: String,
+            context: Context
+        ) {
             val id = context.applicationContext.packageName
             val notificationManager =
                 context.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
@@ -41,7 +47,7 @@ class ToolsVisit {
             channel.lightColor = Color.GREEN
             channel.enableVibration(true)
             notificationManager.createNotificationChannel(channel)
-            val notificationID = 101
+            val notificationID = vnumber
             val notification = Notification.Builder(
                 context,
                 id
@@ -176,16 +182,12 @@ class ToolsVisit {
             mAuth = FirebaseAuth.getInstance()
 
             mRef.addValueEventListener(object : ValueEventListener {
-                override fun onCancelled(p0: DatabaseError) {
-                }
-
+                override fun onCancelled(p0: DatabaseError) {}
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-
                     vacant.clear()
                     for (n in dataSnapshot.children) {
                         val tindex = n.key.toString()
                         if (n.value.toString() == "1") {
-
                             vacant.add(tindex)
                         }
                     }
@@ -193,8 +195,31 @@ class ToolsVisit {
             })
             Thread.sleep(500)
             return vacant
-
         }
+
+        fun GetmissedNotifications(): MutableList<String> {
+            val vacant: MutableList<String> = mutableListOf()
+            var mRef: DatabaseReference? = null
+            var mAuth: FirebaseAuth? = null
+            val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+            mRef = database.getReference("Booked")
+            mAuth = FirebaseAuth.getInstance()
+            mRef.addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {}
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    vacant.clear()
+                    for (n in dataSnapshot.children) {
+                        if (n.child("isnotified").value.toString() == "1") {
+                            vacant.add(n.child("id").toString())
+                        }
+                    }
+                }
+            })
+            Thread.sleep(500)
+            return vacant
+        }
+
+
 
         fun GoExpired() {
             //this function to :
@@ -574,20 +599,11 @@ class ToolsVisit {
                 DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
                     val myCalendar = GregorianCalendar(year, month, dayOfMonth)
                     var dayOfWeek = myCalendar.get(Calendar.DAY_OF_WEEK)
-                    if (dayOfWeek > 5) {
-
-                        vtoast(
-                            "لا يمكن اختيار يوم عطلة ، يرجى التأكد من التاريخ والمحاولة ثانية!".toString(),
-                            3,
-                            context,
-                            Layoutinflater
-                        )
-                    } else {
                         var a = myCalendar.timeInMillis.toString()
                         var b = a.substring(0, 10).toLong()
                         result = b
                         textview.text = Tools.epochToStr(b)
-                    }
+
                 },
                 1,
                 2,
